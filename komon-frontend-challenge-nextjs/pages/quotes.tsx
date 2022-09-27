@@ -1,11 +1,32 @@
 import type { NextPage } from 'next'
-// import { useState } from 'react'
+import Quote from '../components/atoms/Quote'
 
-const Quotes: NextPage = () => {
-  // const [ quotes, setQuotes ] = useState([])
+export async function getServerSideProps() {
+  const res = await fetch(`https://zenquotes.io/api/quotes/today`)
+  const quotes = await res.json()
+
+  return { props: { quotes } }
+}
+
+type QuoteType = {
+  q: string,
+  a: string,
+  c: string,
+  h: string
+}
+
+type Props = {
+  quotes: QuoteType[]
+}
+
+const Quotes: NextPage<Props> = ({ quotes }) => {
   return (
     <div>
-
+      {
+        quotes.map(quote => (
+          <Quote quote={quote.q} author={quote.a}  key={quote.c}/>
+        ))
+      }
     </div>
   )
 }
