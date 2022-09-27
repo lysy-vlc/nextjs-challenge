@@ -1,0 +1,27 @@
+.container {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  button {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-weight: bold;
+
+    border-radius: 0;
+    border: none;
+    cursor: pointer;
+    background-color: lightblue;
+  }
+}
+
+.property-wrapper {
+  background: darkgray;
+  color: white;
+  padding: 10px;
+
+  span {
+    font-weight: bold;
+  }
+}
