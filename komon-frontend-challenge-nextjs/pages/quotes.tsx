@@ -23,8 +23,8 @@ const Quotes: NextPage<Props> = ({ quotes }) => {
   return (
     <div>
       {
-        quotes.map(quote => (
-          <Quote quote={quote.q} author={quote.a}  key={quote.c}/>
+        quotes.map((quote, index) => (
+          <Quote quote={quote.q} author={quote.a}  key={quote.a + index}/>
         ))
       }
     </div>

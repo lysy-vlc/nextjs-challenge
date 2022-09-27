@@ -75,27 +75,25 @@ const Calculator: FunctionComponent = () => {
   }
 
   return (
-    <div>
-      <div className={styles.container}>
-        <div className={styles.result}>
-          { result !== null ? result : equation }
-        </div>
+    <div className={styles.container}>
+      <div className={styles.result}>
+        { result !== null ? result : equation }
+      </div>
 
-        <div className={styles['digits-panel']}>
-          <DigitsPanel click={ handleDigitsPanel } disabled={!!result || result === 0}/>
-        </div>
+      <div className={styles['digits-panel']}>
+        <DigitsPanel click={ handleDigitsPanel } disabled={!!result || result === 0}/>
+      </div>
 
-        <div className={styles['functional-panel']}>
-          <FunctionalPanel click={ handleFunctionalPanel } disabled={!!result || result === 0}/>
-        </div>
+      <div className={styles['functional-panel']}>
+        <FunctionalPanel click={ handleFunctionalPanel } disabled={!!result || result === 0}/>
+      </div>
 
-        <div className={styles['equal-button']}>
-          <CalculatorRectButton sign={'='} color={'orange'} click={ calc } disabled={!!result || result === 0 || !operationType}/>
-        </div>
+      <div className={styles['equal-button']}>
+        <CalculatorRectButton sign={'='} color={'orange'} click={ calc } disabled={!!result || result === 0 || !operationType}/>
+      </div>
 
-        <div className={styles.clear}>
-          <CalculatorRectButton sign={'clear'} color={'black'} click={ clear } disabled={false}/>
-        </div>
+      <div className={styles.clear}>
+        <CalculatorRectButton sign={'clear'} color={'black'} click={ clear } disabled={false}/>
       </div>
     </div>
   )
